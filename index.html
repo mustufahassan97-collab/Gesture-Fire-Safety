@@ -285,24 +285,66 @@
     </section>
     </section>
     <!-- Footer -->
-    <footer class="bg-black py-20 border-t border-white/5">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
-            <div>
+    <footer class="bg-black py-20 border-t border-white/5 relative overflow-hidden">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-16 relative z-10">
+            
+            <!-- Brand & Mission -->
+            <div data-aos="fade-up">
                 <h4 class="font-black text-2xl uppercase mb-6 tracking-tighter">Gesture <span class="text-red-600">Fire Safety</span></h4>
-                <p class="text-gray-500">Stop Disaster—Before It Starts. Protecting Industry, Innovation, and Infrastructure in Karachi and beyond.</p>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    Stop Disaster—Before It Starts. Protecting Industry, Innovation, and Infrastructure with advanced autonomous suppression technology.
+                </p>
+                <div class="flex items-center gap-2 text-[10px] font-black text-red-600 uppercase tracking-widest">
+                    <span class="h-2 w-2 bg-red-600 rounded-full animate-pulse"></span>
+                    Systems Operational
+                </div>
             </div>
-            <div>
-                <h5 class="font-black uppercase mb-6 text-sm text-red-600">Headquarters</h5>
-                <p class="text-gray-400 text-sm">Office# 176, Erum Mall, Karachi, Pakistan</p>
-                <p class="text-white font-bold mt-4">+92 339 000 3473</p>
+
+            <!-- Headquarters Contact Node -->
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h5 class="font-black uppercase mb-6 text-xs text-red-600 tracking-[0.2em]">Headquarters</h5>
+                <div class="space-y-4 text-sm font-bold uppercase">
+                    <div class="flex items-start gap-3">
+                        <span class="text-gray-600">ADDR:</span>
+                        <p class="text-gray-400 text-xs leading-relaxed">Office# 176, Erum Mall, <br>Karachi, Pakistan</p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+                        <span class="text-gray-600">MAIL:</span>
+                        <a href="mailto:info@gesturefiresafety.com" class="text-white hover:text-red-600 transition tracking-tighter">info@gesturefiresafety.com</a>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+                        <span class="text-gray-600">WEB:</span>
+                        <a href="https://www.gesturefiresafety.com" target="_blank" class="text-white hover:text-red-600 transition tracking-tighter">www.gesturefiresafety.com</a>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+                        <span class="text-gray-600">TEL:</span>
+                        <p class="text-red-600">+92 339 000 3473</p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h5 class="font-black uppercase mb-6 text-sm text-red-600">Eco-Certification</h5>
-                <p class="text-gray-400 text-xs">FK-5-1-12 Agent: Zero Ozone Depletion. Safe for Humans. Clean Technology certified.</p>
+
+            <!-- Technical Compliance -->
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h5 class="font-black uppercase mb-6 text-xs text-red-600 tracking-[0.2em]">Eco-Certification</h5>
+                <p class="text-gray-500 text-xs leading-relaxed mb-4">
+                    FK-5-1-12 Agent: Zero Ozone Depletion. Safe for Human Presence. Specialized for Electrical Enclosures and Server Racks.
+                </p>
+                <div class="grid grid-cols-3 gap-2 opacity-30">
+                    <div class="border border-white p-2 text-center text-[8px] font-black">CE</div>
+                    <div class="border border-white p-2 text-center text-[8px] font-black">UKCA</div>
+                    <div class="border border-white p-2 text-center text-[8px] font-black">ROHS</div>
+                </div>
             </div>
         </div>
-        <div class="text-center mt-20 text-[10px] text-gray-700 uppercase tracking-widest">
-            &copy; 2026 Gesture Fire Safety. All Systems Online.
+
+        <!-- Copyright & Credits -->
+        <div class="container mx-auto px-6 border-t border-white/5 mt-20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-[10px] text-gray-700 uppercase tracking-widest font-bold">
+                &copy; 2026 Gesture Fire Safety. All Rights Reserved.
+            </div>
+            <div class="text-[9px] text-gray-800 uppercase font-black">
+                Procurement via Index Building Solutions
+            </div>
         </div>
     </footer>
 
