@@ -1,297 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gesture Fire Safety | Stop Disaster Before It Starts</title>
+    <title>Gesture Fire Safety | Future of Suppression</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; }
-        .hero-split { background: linear-gradient(90deg, #1a1a1a 50%, #ffffff 50%); }
-        @media (max-width: 768px) { .hero-split { background: #1a1a1a; } }
+        body { font-family: 'Montserrat', sans-serif; background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        
+        /* Futuristic Glass Effect */
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        
+        /* Glowing Red Accent */
+        .glow-red { filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.4)); }
+        
+        /* Scanline Animation for Tech feel */
+        .scanline::after {
+            content: ""; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(220, 38, 38, 0.05) 50%);
+            background-size: 100% 4px; pointer-events: none;
+        }
+
+        .hero-gradient { background: radial-gradient(circle at 70% 50%, #1a0505 0%, #050505 100%); }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body>
 
-<nav class="flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-white shadow-sm sticky top-0 z-50 gap-4">
-    <div class="flex items-center space-x-4">
-        <img src="logo.png" alt="Gesture Logo" class="h-10 md:h-12">
-        <div class="border-l-2 border-gray-200 h-8 mx-2 hidden md:block"></div>
-        <span class="font-black text-lg md:text-xl uppercase text-black tracking-tighter">Gesture Fire Safety</span>
-    </div>
-
-    <!-- Updated Navigation Links -->
-    <div class="flex items-center space-x-4 md:space-x-6 font-bold text-[9px] md:text-xs uppercase tracking-widest">
-        <a href="#vision" class="text-black hover:text-red-600 transition">Vision</a>
-        <a href="#products" class="text-black hover:text-red-600 transition">Products</a>
-        <a href="#tech" class="text-black hover:text-red-600 transition">Tech</a>
-        <!-- Added Project Gallery Button -->
-        <a href="#projects-gallery" class="text-black hover:text-red-600 transition border-b-2 border-transparent hover:border-red-600">Project Gallery</a>
-        
-        <a href="mailto:sales@gesturefiresafety.com" class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-black transition shadow-md whitespace-nowrap">Contact Us</a>
-    </div>
-</nav>
-    <section id="about-us" data-aos="fade-up" class="pt-32 pb-20 bg-white">
-    <section id="about-us" class="pt-32 pb-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2">
-                    <h2 class="text-6xl font-black uppercase leading-[0.9] text-black mb-6">
-                        Safety <br>
-                        <span class="text-red-600">Reimagined.</span>
-                    </h2>
-                    <div class="w-20 h-2 bg-black mb-8"></div>
-                    <p class="text-gray-500 font-bold uppercase tracking-[0.2em] text-sm">Gesture Fire Safety</p>
-                </div>
-
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-black uppercase mb-4 italic">Reliable Protection for Critical Assets</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6 text-lg">
-                        At **Gesture Fire Safety**, we specialize in the engineering and distribution of advanced, automatic fire suppression systems. Our technology is designed to safeguard electrical panels, server rooms, and industrial machinery where every second counts.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        We provide a seamless transition from fire detection to extinction. With our **FSK Series** units, we ensure that your high-value equipment is protected 24/7 by clean-agent technology that is safe for both humans and the environment.
-                    </p>
-                </div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass py-4 transition-all duration-300 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" class="h-10 glow-red">
+                <span class="font-black text-xl uppercase tracking-tighter">Gesture <span class="text-red-600">Fire Safety</span></span>
             </div>
-        </div>
-    </section>
-    <div class="hidden lg:flex space-x-8 font-bold text-xs uppercase tracking-widest">
-            <a href="#about" class="hover:text-red-600">Vision</a>
-            <a href="#products" class="hover:text-red-600">Products</a>
-            <a href="#how-it-works" class="hover:text-red-600">Tech</a>
-            <a href="mailto:sales@gesturefiresafety.com" class="bg-red-600 text-white px-4 py-2 rounded">Contact</a>
+            <div class="hidden lg:flex items-center space-x-8 font-bold text-[10px] uppercase tracking-widest">
+                <a href="#about-us" class="hover:text-red-600 transition">About</a>
+                <a href="#vision" class="hover:text-red-600 transition">Vision</a>
+                <a href="#products" class="hover:text-red-600 transition">Products</a>
+                <a href="#tech" class="hover:text-red-600 transition text-red-500">Tech</a>
+                <a href="#projects-gallery" class="hover:text-red-600 transition">Gallery</a>
+                <a href="mailto:sales@gesturefiresafety.com" class="bg-red-600 px-5 py-2 rounded-full hover:bg-white hover:text-black transition">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero-split min-h-[80vh] flex items-center">
-        <div class="container mx-auto flex flex-wrap items-center">
-            <div class="w-full lg:w-1/2 p-10 text-white">
-                <h2 class="text-red-500 font-bold mb-4 tracking-widest uppercase">Pioneers in Pakistan</h2>
-                <h1 class="text-5xl lg:text-7xl font-black leading-none mb-6">FIRE DOESN'T KNOCK.<br><span class="text-red-600 italic">IT BREAKS IN.</span></h1>
-                <p class="text-lg text-gray-400 mb-8">STOP DISASTER—BEFORE IT STARTS. Automatic fire suppression for electrical enclosures and mission-critical infrastructure.</p>
+    <!-- Hero Section -->
+    <header class="hero-gradient min-h-screen flex items-center pt-20 scanline">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 items-center gap-12">
+            <div data-aos="fade-right">
+                <h2 class="text-red-600 font-bold mb-4 tracking-[0.3em] uppercase text-sm">Industrial Protection 2.0</h2>
+                <h1 class="text-6xl lg:text-8xl font-black leading-none mb-6">THE SILENT <br> <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-white">GUARDIAN.</span></h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-md">Automatic Fire Suppression for mission-critical infrastructure. Zero delay. Zero residue.</p>
                 <div class="flex gap-4">
-                    <a href="#products" class="bg-red-600 px-8 py-4 font-bold uppercase hover:bg-red-700 transition">Our Systems</a>
-                    <a href="tel:+923390003473" class="border-2 border-white px-8 py-4 font-bold uppercase hover:bg-white hover:text-black transition">Call Now</a>
+                    <a href="#products" class="bg-red-600 px-8 py-4 font-black uppercase hover:scale-105 transition shadow-[0_0_20px_rgba(220,38,38,0.5)]">Explore Systems</a>
+                    <a href="tel:+923390003473" class="border border-white/20 px-8 py-4 font-black uppercase hover:bg-white hover:text-black transition">Call HQ</a>
                 </div>
             </div>
-            <div class="w-full lg:w-1/2 p-10 flex justify-center">
-                <img src="hero-extinguisher.jpg" alt="GesproTech System" class="max-h-[600px] drop-shadow-2xl rounded-lg">
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute inset-0 bg-red-600/10 blur-[100px] rounded-full"></div>
+                <img src="hero-extinguisher.jpg" alt="FSP System" class="relative z-10 mx-auto max-h-[550px] glow-red">
             </div>
         </div>
     </header>
 
-<section class="py-20 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Our Foundation</h3>
-            <h2 class="text-4xl font-black uppercase mb-12">Core Values</h2>
-            
-            <div class="max-w-4xl mx-auto shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
-                <img src="core-values.jpg" alt="Gesture Fire Safety Core Values" class="w-full h-auto">
+    <!-- About Section -->
+    <section id="about-us" class="py-32 bg-[#080808] relative overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2" data-aos="fade-up">
+                <h2 class="text-5xl font-black uppercase leading-none mb-6">Safety <br><span class="text-red-600">Reimagined.</span></h2>
+                <div class="w-24 h-1 bg-red-600 mb-8"></div>
+                <p class="text-gray-400 leading-relaxed text-lg mb-6">Based in Karachi, Gesture Fire Safety engineers specialized, automatic suppression systems that detect and extinguish threats at the source—instantly.</p>
             </div>
-        </div>
-    </section>
-    </section>
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-red-600 font-bold uppercase mb-2">Our Vision</h3>
-<p class="text-gray-600 text-lg">To become a leading innovator in compact, automatic fire suppression solutions, providing safe protection from the smallest enclosures to complex facilities.</p>            </div>
-            <div>
-                <h3 class="text-red-600 font-bold uppercase mb-2">Our Mission</h3>
-                <p class="text-gray-600">To design, manufacture, and deliver systems that prioritize safety, reliability, and environmental responsibility, serving diverse sectors with innovative, cost-effective, and easy-to-integrate solutions.</p>
+            <div class="md:w-1/2 grid grid-cols-2 gap-4" data-aos="fade-left">
+                <div class="glass p-8 rounded-2xl"><h4 class="text-red-600 font-black text-3xl">24/7</h4><p class="text-[10px] uppercase font-bold text-gray-500">Autonomous Monitoring</p></div>
+                <div class="glass p-8 rounded-2xl"><h4 class="text-white font-black text-3xl">3KG+</h4><p class="text-[10px] uppercase font-bold text-gray-500">Variable Capacities</p></div>
             </div>
         </div>
     </section>
 
-<section id="products" class="py-20 bg-gray-50">
+    <!-- Vision & Mission -->
+    <section id="vision" class="py-20 bg-black border-y border-white/5">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12">
+            <div class="glass p-10 rounded-3xl" data-aos="fade-right">
+                <h3 class="text-red-600 font-black uppercase mb-4 tracking-widest text-sm italic underline">Our Vision</h3>
+                <p class="text-gray-300 text-xl leading-relaxed">To lead the innovation of compact, automatic fire solutions globally, starting from the heart of Pakistan.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl" data-aos="fade-left">
+                <h3 class="text-red-600 font-black uppercase mb-4 tracking-widest text-sm italic underline">Our Mission</h3>
+                <p class="text-gray-300">Delivering cost-effective, zero-maintenance systems that protect assets and the environment with CE-compliant clean agents.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="py-32 bg-[#050505]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-black uppercase mb-2">The <span class="text-red-600">Hardware</span></h2>
+                <p class="text-gray-500 uppercase tracking-widest font-bold text-xs">FSK Series & FSP Hubs</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- FSK-003 -->
+                <div class="glass rounded-3xl overflow-hidden group transition-all hover:border-red-600/50" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-[400px] p-8 flex items-center justify-center bg-white/5">
+                        <img src="fsk-003.jpg" class="max-h-full object-contain transition-transform group-hover:scale-110">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h4 class="font-black text-2xl text-white">FSK-003</h4>
+                        <p class="text-red-600 font-bold text-xs">3 KG UNIT</p>
+                    </div>
+                </div>
+                <!-- FSK-005 -->
+                <div class="glass rounded-3xl overflow-hidden group transition-all hover:border-red-600/50" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-[400px] p-8 flex items-center justify-center bg-white/5">
+                        <img src="fsk-005.jpg" class="max-h-full object-contain transition-transform group-hover:scale-110">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h4 class="font-black text-2xl text-white">FSK-005</h4>
+                        <p class="text-red-600 font-bold text-xs">5 KG UNIT</p>
+                    </div>
+                </div>
+                <!-- FSK-010 -->
+                <div class="glass rounded-3xl overflow-hidden group transition-all hover:border-red-600/50" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-[400px] p-8 flex items-center justify-center bg-white/5">
+                        <img src="fsk-010.jpg" class="max-h-full object-contain transition-transform group-hover:scale-110">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h4 class="font-black text-2xl text-white">FSK-010</h4>
+                        <p class="text-red-600 font-bold text-xs">10 KG UNIT</p>
+                    </div>
+                </div>
+                <!-- FSP-100 -->
+                <div class="glass rounded-3xl overflow-hidden group transition-all hover:border-red-600/50 border-red-900/30" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-[400px] p-8 flex items-center justify-center bg-red-900/10">
+                        <img src="fsp-100.jpg" class="max-h-full object-contain transition-transform group-hover:scale-110">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h4 class="font-black text-2xl text-white">FSP-100</h4>
+                        <p class="text-red-600 font-bold text-xs">CONTROL PANEL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech / How it Works -->
+    <section id="tech" class="py-32 bg-black relative">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-black mb-8 uppercase">Technical <span class="text-red-600">DNA</span></h2>
+                <div class="space-y-6">
+                    <div class="flex items-center p-6 glass rounded-2xl">
+                        <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full font-black mr-6 italic shadow-[0_0_15px_rgba(220,38,38,0.6)]">01</div>
+                        <div><h5 class="font-black uppercase text-sm">Heat Sensitive Detection</h5><p class="text-gray-500 text-xs">Proprietary polymer tubing reacts at 110°C.</p></div>
+                    </div>
+                    <div class="flex items-center p-6 glass rounded-2xl">
+                        <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full font-black mr-6 italic shadow-[0_0_15px_rgba(220,38,38,0.6)]">02</div>
+                        <div><h5 class="font-black uppercase text-sm">Clean Agent FK-5-1-12</h5><p class="text-gray-500 text-xs">Zero residue. Non-conductive. Safe for server racks.</p></div>
+                    </div>
+                    <div class="flex items-center p-6 glass rounded-2xl">
+                        <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center rounded-full font-black mr-6 italic shadow-[0_0_15px_rgba(220,38,38,0.6)]">03</div>
+                        <div><h5 class="font-black uppercase text-sm">GSM IoT Interface</h5><p class="text-gray-500 text-xs">Automatic SMS/Voice alerts via Arduino-based FSP architecture.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-12 rounded-3xl border-t-4 border-red-600 shadow-[0_20px_50px_rgba(220,38,38,0.1)]" data-aos="flip-up">
+                <h3 class="text-2xl font-black mb-8 border-b border-white/10 pb-4 uppercase">System Diagnostics</h3>
+                <div class="space-y-4 font-bold text-sm uppercase">
+                    <div class="flex justify-between text-gray-500"><span>Agent Agent</span> <span class="text-white">FK-5-1-12</span></div>
+                    <div class="flex justify-between text-gray-500"><span>Response Time</span> <span class="text-red-600">&lt; 10 Seconds</span></div>
+                    <div class="flex justify-between text-gray-500"><span>Alert Protocol</span> <span class="text-white">SMS + Voice Call</span></div>
+                    <div class="flex justify-between text-gray-500"><span>Certification</span> <span class="text-green-500">CE, UKCA, ROHS</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects-gallery" class="py-32 bg-[#050505]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h3 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-2">Our Solutions</h3>
-                <h2 class="text-4xl font-black uppercase">Suppression & Control Systems</h2>
+                <h2 class="text-5xl font-black uppercase">Field <span class="text-red-600">Deployments</span></h2>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col transition hover:shadow-2xl">
-                    <div class="h-[450px] bg-gray-100 overflow-hidden"> <img src="fsk-003.jpg" alt="FSK-003" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105 p-4">
-                    </div>
-                    <div class="p-6 bg-white border-t border-gray-50 text-center">
-                        <h4 class="font-black text-red-600 text-lg">FSK-003</h4>
-                        <p class="text-[10px] font-bold uppercase text-gray-400">3 KG Capacity</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col transition hover:shadow-2xl">
-                    <div class="h-[450px] bg-gray-100 overflow-hidden">
-                        <img src="fsk-005.jpg" alt="FSK-005" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105 p-4">
-                    </div>
-                    <div class="p-6 bg-white border-t border-gray-50 text-center">
-                        <h4 class="font-black text-red-600 text-lg">FSK-005</h4>
-                        <p class="text-[10px] font-bold uppercase text-gray-400">5 KG Capacity</p>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col transition hover:shadow-2xl">
-                    <div class="h-[450px] bg-gray-100 overflow-hidden">
-                        <img src="fsk-010.jpg" alt="FSK-010" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105 p-4">
-                    </div>
-                    <div class="p-6 bg-white border-t border-gray-50 text-center">
-                        <h4 class="font-black text-red-600 text-lg">FSK-010</h4>
-                        <p class="text-[10px] font-bold uppercase text-gray-400">10 KG Capacity</p>
-                    </div>
-                </div>
-
-                <div class="bg-black rounded-xl overflow-hidden shadow-md border border-gray-800 flex flex-col transition hover:shadow-2xl">
-                    <div class="h-[450px] bg-gray-900 overflow-hidden">
-                        <img src="fsp-100.jpg" alt="FSP-100" class="w-full h-full object-contain transition-transform duration-500 hover:scale-105 p-4">
-                    </div>
-                    <div class="p-6 bg-black border-t border-gray-800 text-center">
-                        <h4 class="font-black text-white text-lg">FSP-100</h4>
-                        <p class="text-[10px] font-bold uppercase text-red-600">Control Panel</p>
-                    </div>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in"><img src="project1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="100"><img src="project2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="200"><img src="project3.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="300"><img src="project4.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="400"><img src="project5.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in"><img src="project6.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="100"><img src="project7.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="200"><img src="project8.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="300"><img src="project9.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
+                <div class="h-64 glass rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="400"><img src="project10.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-125"></div>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="py-20 bg-gray-900 text-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-wrap items-center">
-                <div class="w-full lg:w-1/2 mb-10 lg:mb-0">
-                    <h2 class="text-4xl font-black mb-6 uppercase">How It Works</h2>
-                    <ul class="space-y-6">
-                        <li class="flex items-start">
-                            <span class="bg-red-600 p-2 rounded mr-4">01</span>
-                            <div><h5 class="font-bold">Heat Detection</h5><p class="text-gray-400">Specialized fire detection tube senses elevated temperatures inside the panel.</p></div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-red-600 p-2 rounded mr-4">02</span>
-                            <div><h5 class="font-bold">Agent Discharge</h5><p class="text-gray-400">Instantly releases FK-5-1-12, leaving zero residue and safe for electronics.</p></div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-red-600 p-2 rounded mr-4">03</span>
-                            <div><h5 class="font-bold">Cellular Alerts</h5><p class="text-gray-400">Integrated control panel sends real-time SMS and call notifications to designated personnel.</p></div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w-full lg:w-1/2 bg-white text-gray-900 p-10 rounded-2xl shadow-2xl lg:ml-auto lg:max-w-md">
-                    <h3 class="font-black text-2xl mb-6 uppercase border-b-2 border-red-600 pb-2">Technical Specs</h3>
-                    <div class="space-y-4 font-bold uppercase text-sm">
-                        <div class="flex justify-between border-b pb-2"><span>Agent</span> <span class="text-red-600">FK-5-1-12</span></div>
-                        <div class="flex justify-between border-b pb-2"><span>Capacity</span> <span>3KG / Variable</span></div>
-                        <div class="flex justify-between border-b pb-2"><span>Activation</span> <span>Automatic (Heat Sensitive)</span></div>
-                        <div class="flex justify-between border-b pb-2"><span>Alerts</span> <span>SMS & Voice Call</span></div>
-                        <div class="flex justify-between"><span>Compliance</span> <span class="text-green-600">CE, UKCA, ROHS</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white py-12 px-6 border-t">
-        <div class="container mx-auto flex flex-wrap justify-between">
-            <div class="mb-8 lg:mb-0">
-                <h4 class="font-black text-xl mb-4">GESTURE FIRE SAFETY</h4>
-                <p class="text-gray-500 max-w-xs">Stop Disaster—Before It Starts. Protecting Industry, Innovation, and Infrastructure.</p>
+    <!-- Footer -->
+    <footer class="bg-black py-20 border-t border-white/5">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div>
+                <h4 class="font-black text-2xl uppercase mb-6 tracking-tighter">Gesture <span class="text-red-600">Fire Safety</span></h4>
+                <p class="text-gray-500">Stop Disaster—Before It Starts. Protecting Industry, Innovation, and Infrastructure in Karachi and beyond.</p>
             </div>
             <div>
-                <h4 class="font-bold mb-4 uppercase">Reach Us</h4>
-                <p class="text-sm text-gray-600">Office# 176, Erum Mall, Karachi, Pakistan</p>
-                <p class="text-sm text-gray-600 font-bold">Sales@gesturefiresafety.com</p>
-                <p class="text-sm text-red-600 font-bold">+92 339 000 3473</p>
+                <h5 class="font-black uppercase mb-6 text-sm text-red-600">Headquarters</h5>
+                <p class="text-gray-400 text-sm">Office# 176, Erum Mall, Karachi, Pakistan</p>
+                <p class="text-white font-bold mt-4">+92 339 000 3473</p>
+            </div>
+            <div>
+                <h5 class="font-black uppercase mb-6 text-sm text-red-600">Eco-Certification</h5>
+                <p class="text-gray-400 text-xs">FK-5-1-12 Agent: Zero Ozone Depletion. Safe for Humans. Clean Technology certified.</p>
             </div>
         </div>
-        <div class="text-center mt-12 text-xs text-gray-400">
-            &copy; 2026 Gesture Fire Safety. Developed for mustufahassan97-collab.
+        <div class="text-center mt-20 text-[10px] text-gray-700 uppercase tracking-widest">
+            &copy; 2026 Gesture Fire Safety. All Systems Online.
         </div>
-        
-        <section class="py-20 bg-green-50">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <h3 class="text-green-700 font-bold uppercase tracking-widest text-sm mb-2">Sustainable Protection</h3>
-                    <h2 class="text-4xl font-black uppercase mb-6">Eco-Friendly <span class="text-green-600">Attributes</span></h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Our fire suppression systems are designed with the planet in mind. We use clean agents that are safe for people, sensitive electronics, and the atmosphere.</p>
-                    
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-600 font-bold">✓</span>
-                            <span class="text-gray-700 font-bold uppercase text-xs tracking-tight">Zero Ozone Depletion Potential (ODP)</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-600 font-bold">✓</span>
-                            <span class="text-gray-700 font-bold uppercase text-xs tracking-tight">Low Global Warming Potential (GWP)</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-600 font-bold">✓</span>
-                            <span class="text-gray-700 font-bold uppercase text-xs tracking-tight">Non-Toxic & Human Safe Agents</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <span class="text-green-600 font-bold">✓</span>
-                            <span class="text-gray-700 font-bold uppercase text-xs tracking-tight">No Residue — No Post-Fire Cleanup</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="md:w-1/2 bg-white p-8 rounded-3xl shadow-xl border-b-8 border-green-500 text-center">
-                    <div class="text-6xl mb-4">🍃</div>
-                    <h4 class="font-black text-xl uppercase italic">Clean Agent Technology</h4>
-                    <p class="text-gray-500 text-sm mt-2">Safe for Server Rooms, Data Centers, and Electrical Cabinets.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-        <!-- Project Gallery Section -->
-    <section id="projects-gallery" class="py-20 bg-white" data-aos="fade-up">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h3 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-2">Our Portfolio</h3>
-                <h2 class="text-4xl font-black uppercase">Successful Installations</h2>
-            </div>
-            
-            <!-- Gallery Grid (Set to 2 columns on small, 3 on medium, 4 on large screens) -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                
-                <!-- Project 1 to 10 -->
-                <!-- You can copy-paste this block for all 10 images -->
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md">
-                    <img src="project1.jpg" alt="Installation 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white text-xs font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md">
-                    <img src="project2.jpg" alt="Installation 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white text-xs font-bold uppercase">View Project</span>
-                    </div>
-                </div>
-
-                <!-- Repeat the block above for project3.jpg through project10.jpg -->
-                <!-- I'll provide the rest of the image tags below for you to paste -->
-
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project3.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project4.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project5.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project6.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project7.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project8.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project9.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-                <div class="group relative h-64 overflow-hidden rounded-lg shadow-md"><img src="project10.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"></div>
-
-            </div>
-        </div>
-    </section>
     </footer>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // Speed of the slide (1 second)
-    once: true,     // Animation happens only once
-    offset: 200     // Starts when you are 200px close to the section
-  });
-</script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+    </script>
 </body>
 </html>
