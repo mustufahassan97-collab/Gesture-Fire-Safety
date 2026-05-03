@@ -45,37 +45,37 @@ export function ProductsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="products" className="py-32 bg-background" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section id="products" className="py-16 md:py-32 bg-background" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-5xl font-black uppercase mb-2 text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase mb-2 text-white">
             The <span className="text-primary">PRODUCT</span>
           </h2>
-          <p className="text-muted-foreground uppercase tracking-widest font-bold text-xs">
+          <p className="text-muted-foreground uppercase tracking-widest font-bold text-[10px] md:text-xs">
             FSK Series & FSP CONTROL PANEL
           </p>
         </motion.div>
 
         {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {products.map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`glass rounded-3xl overflow-hidden group transition-all hover:border-primary/50 ${
+              className={`glass rounded-2xl md:rounded-3xl overflow-hidden group transition-all hover:border-primary/50 ${
                 product.featured ? "border-primary/30" : ""
               }`}
             >
               <div
-                className={`h-[400px] p-8 flex items-center justify-center ${
+                className={`h-[280px] sm:h-[320px] md:h-[400px] p-4 md:p-8 flex items-center justify-center ${
                   product.featured ? "bg-primary/10" : "bg-white/5"
                 }`}
               >
@@ -87,9 +87,9 @@ export function ProductsSection() {
                   className="max-h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-8 text-center">
-                <h4 className="font-black text-2xl text-white">{product.name}</h4>
-                <p className="text-primary font-bold text-xs uppercase">
+              <div className="p-4 md:p-8 text-center">
+                <h4 className="font-black text-xl md:text-2xl text-white">{product.name}</h4>
+                <p className="text-primary font-bold text-[10px] md:text-xs uppercase">
                   {product.capacity}
                 </p>
                 <p className="text-muted-foreground text-[10px] font-bold uppercase mt-1 tracking-wider leading-relaxed">
