@@ -63,29 +63,29 @@ export function GallerySection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="projects-gallery" className="py-32 bg-background" ref={ref}>
-      <div className="container mx-auto px-6">
+    <section id="projects-gallery" className="py-16 md:py-32 bg-background" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-5xl font-black uppercase text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-white">
             Field <span className="text-primary">Deployments</span>
           </h2>
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="h-64 glass rounded-xl overflow-hidden group"
+              className="h-40 sm:h-52 md:h-64 glass rounded-lg md:rounded-xl overflow-hidden group"
             >
               <Image
                 src={project.image}

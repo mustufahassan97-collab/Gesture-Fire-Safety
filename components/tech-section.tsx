@@ -35,34 +35,34 @@ export function TechSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="tech" className="py-32 bg-background relative" ref={ref}>
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section id="tech" className="py-16 md:py-32 bg-background relative" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Left - Features */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-black mb-8 uppercase text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-6 md:mb-8 uppercase text-white text-center lg:text-left">
             Technical <span className="text-primary">DATA SHEET</span>
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {techFeatures.map((feature, index) => (
               <motion.div
                 key={feature.number}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="flex items-center p-6 glass rounded-2xl"
+                className="flex items-start sm:items-center p-4 md:p-6 glass rounded-2xl"
               >
-                <div className="bg-primary text-white w-12 h-12 flex items-center justify-center rounded-full font-black mr-6 italic shadow-glow shrink-0">
+                <div className="bg-primary text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full font-black mr-4 md:mr-6 italic shadow-glow shrink-0 text-sm md:text-base">
                   {feature.number}
                 </div>
-                <div>
-                  <h5 className="font-black uppercase text-sm text-white">
+                <div className="min-w-0">
+                  <h5 className="font-black uppercase text-xs md:text-sm text-white">
                     {feature.title}
                   </h5>
-                  <p className="text-muted-foreground text-xs">{feature.description}</p>
+                  <p className="text-muted-foreground text-[10px] md:text-xs leading-relaxed">{feature.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -74,26 +74,26 @@ export function TechSection() {
           initial={{ opacity: 0, rotateY: 15 }}
           animate={isInView ? { opacity: 1, rotateY: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="glass p-12 rounded-3xl border-t-4 border-primary shadow-[0_20px_50px_rgba(220,38,38,0.1)]"
+          className="glass p-6 sm:p-8 md:p-12 rounded-3xl border-t-4 border-primary shadow-[0_20px_50px_rgba(220,38,38,0.1)]"
         >
-          <h3 className="text-2xl font-black mb-8 border-b border-border pb-4 uppercase text-white">
+          <h3 className="text-xl md:text-2xl font-black mb-6 md:mb-8 border-b border-border pb-4 uppercase text-white text-center lg:text-left">
             System Diagnostics
           </h3>
-          <div className="space-y-4 font-bold text-sm uppercase">
+          <div className="space-y-4 font-bold text-xs md:text-sm uppercase">
             {diagnostics.map((item) => (
               <div
                 key={item.label}
-                className="flex justify-between text-muted-foreground"
+                className="flex flex-col sm:flex-row sm:justify-between text-muted-foreground gap-1 sm:gap-4 border-b border-border/30 pb-3 sm:border-0 sm:pb-0"
               >
-                <span>{item.label}</span>
+                <span className="text-muted-foreground/70 sm:text-muted-foreground">{item.label}</span>
                 <span
-                  className={
+                  className={`${
                     item.highlight === "green"
                       ? "text-green-500"
                       : item.highlight
                       ? "text-primary"
                       : "text-white"
-                  }
+                  } text-right sm:text-left`}
                 >
                   {item.value}
                 </span>
