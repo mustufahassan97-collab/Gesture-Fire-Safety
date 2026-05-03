@@ -64,7 +64,7 @@ export function HeroSection() {
               href="tel:+923390003473"
               className="border border-white/20 px-8 py-4 font-black uppercase text-white hover:bg-white hover:text-black transition-all"
             >
-              Call HQ
+              Call Now
             </Link>
           </motion.div>
         </motion.div>

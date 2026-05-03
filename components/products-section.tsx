@@ -35,7 +35,7 @@ const products = [
     name: "FSP-100",
     capacity: "Control Panel",
     description: "24/7 Monitoring, BMS/FACP Integration",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hero-extinguisher-P0bnPhycs2JdMGPdKpsbTnLmwaqH2Z.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fsp-100-xHWwCnxnRowmY29vgB8EKOglteRnOm.jpg",
     featured: true,
   },
 ]
