@@ -10,7 +10,7 @@ const navLinks = [
   { href: "#about-us", label: "About" },
   { href: "#vision", label: "Vision" },
   { href: "#products", label: "Products" },
-  { href: "#tech", label: "Tech", highlight: true },
+  { href: "#tech", label: "Tech" },
   { href: "#projects-gallery", label: "Gallery" },
 ]
 
