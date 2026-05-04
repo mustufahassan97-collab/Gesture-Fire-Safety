@@ -14,10 +14,18 @@ export const metadata: Metadata = {
   description: 'GESPROTECH - Automatic Fire Suppression Systems for Electrical Panels. Stop Disaster Before It Starts.',
   keywords: ['fire safety', 'fire suppression', 'electrical panel protection', 'FK-5-1-12', 'automatic fire suppression', 'GESPROTECH'],
   authors: [{ name: 'Gesture Fire Safety' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'Gesture Fire Safety | Future of Fire Suppression',
     description: 'Advanced automatic fire suppression systems protecting electrical infrastructure.',
     type: 'website',
+    images: [{ url: '/icon.png' }],
   },
 }
 
